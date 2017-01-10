@@ -3,9 +3,10 @@ counter <- 1
 w <- data.frame(1:46)
 x <- read.csv(paste0(state.name[counter], "_APDataPercent.csv"))[3:5, ]
 row.names(w) <- colnames(x)
-while (counter < length(state.name)) {
-x <- read.csv(paste0(state.name[counter], "_APDataPercent.csv"))[3:5, ]
 
+while (counter < length(state.name)) {
+  
+x <- read.csv(paste0(state.name[counter], "_APDataPercent.csv"))[3:5, ]
 c <- 3
 z <- data.frame(1:46)
 rownames(z) <- colnames(x)

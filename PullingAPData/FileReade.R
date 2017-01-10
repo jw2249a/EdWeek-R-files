@@ -21,10 +21,23 @@ while (i < length(state.name)+1) {
                   content <- download.file(url, w,  mode = "wb")
   }
   if (sum(as.numeric(y == c(7, 8))) > 0) {
-    
-    url <- paste0("http://media.collegeboard.com/digitalServices/pdf/research/2013/", gsub(" ", "_", state.name[i]), "_Summary_13.xls")
+    if (i != 2 || y != 7) {
+      if (i != 3 || y != 7) {
+    url <- paste0("http://media.collegeboard.com/digitalServices/pdf/research/20", years[y], "/", gsub(" ", "_", state.name[i]), "_Summary_", years[y], ".xls")
     w <- paste0(gsub(" ", "_", state.name[i]), "_Summary_", years[y], ".xls")
     content <- download.file(url, w, mode = "wb")
+      }
+      if (i==3 && y == 7){
+        url <- paste0("http://media.collegeboard.com/digitalServices/pdf/research/20", years[y], "/", gsub(" ", "_", state.name[i]), "_Summery_", years[y], ".xls")
+        w <- paste0(gsub(" ", "_", state.name[i]), "_Summary_", years[y], ".xls")
+        content <- download.file(url, w, mode = "wb")
+      }
+    }
+    if (i == 2 && y == 7) {
+      url <- paste0("http://media.collegeboard.com/digitalServices/pdf/research/20", years[y], "/ALASKA_Summary_", years[y], ".xls")
+      w <- paste0(gsub(" ", "_", state.name[i]), "_Summary_", years[y], ".xls")
+      content <- download.file(url, w, mode = "wb") 
+    }
   }
   if (sum(as.numeric(y == c(4, 5, 6))) > 0) {
     
