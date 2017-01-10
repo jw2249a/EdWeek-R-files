@@ -6,4 +6,4 @@
 
 * Probably
 
-/ except they don't have robots.txt and I didn't have time to ask
+#### except they don't have robots.txt and I didn't have time to ask
